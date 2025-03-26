@@ -1,0 +1,90 @@
+/* assets/css/style.css */
+
+/* Make sure html and body fill the full viewport height */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Global gradient background */
+  body {
+    background: #659999;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #f4791f, #659999);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #f4791f, #659999); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+  
+  /* Navbar: translucent black so the gradient shows through */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+  }
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+  }
+  .nav-link:hover {
+    color: #ddd !important;
+  }
+  
+  /* Container spacing */
+  .container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Cards: translucent black with a bit of padding */
+  .card {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Fade-in animation for a smooth entrance */
+  .fade-in {
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Form inputs: lighter background for readability */
+  .form-control {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    border: none;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
+  .form-label {
+    color: #fff;
+  }
+  
+  /* Buttons: consistent styling with slight shadow */
+  .btn-primary, .btn-success {
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;
+  }
+  .btn-primary:hover, .btn-success:hover {
+    opacity: 0.9;
+  }
+  
+  /* Alerts: keep them distinct */
+  .alert-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Chart.js background fix for dark themes */
+  .chartjs-render-monitor {
+    background-color: transparent;
+  }
+  
