@@ -1,6 +1,7 @@
 <?php
-// header.php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +16,7 @@ session_start();
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Bootstrap Icons CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,6 +34,9 @@ session_start();
           <li class="nav-item"><a class="nav-link" href="expense.php">Expenses</a></li>
           <li class="nav-item"><a class="nav-link" href="budget.php">Budget</a></li>
           <li class="nav-item"><a class="nav-link" href="reports.php">Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="reset.php">Reset Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="export.php">Export Data</a></li>
           <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
         <?php else: ?>
           <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
