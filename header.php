@@ -37,6 +37,7 @@ if (session_status() === PHP_SESSION_NONE) {
           <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
           <li class="nav-item"><a class="nav-link" href="reset.php">Reset Data</a></li>
           <li class="nav-item"><a class="nav-link" href="export.php">Export Data</a></li>
+          <li class="nav-item"><a class="nav-link" href="view_records.php">View Records</a></li>
           <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
         <?php else: ?>
           <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
