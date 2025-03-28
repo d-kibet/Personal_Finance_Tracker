@@ -51,6 +51,7 @@ $budgetRecords = $stmt->fetchAll();
                 <th>Amount</th>
                 <th>Entry Date</th>
                 <th>Description</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -61,10 +62,14 @@ $budgetRecords = $stmt->fetchAll();
                     <td>$<?php echo number_format($record['amount'], 2); ?></td>
                     <td><?php echo htmlspecialchars($record['entry_date']); ?></td>
                     <td><?php echo htmlspecialchars($record['description']); ?></td>
+                    <td>
+                      <a href="edit_income.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="delete_income.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               <?php else: ?>
-                <tr><td colspan="4" class="text-center">No income records found.</td></tr>
+                <tr><td colspan="5" class="text-center">No income records found.</td></tr>
               <?php endif; ?>
             </tbody>
           </table>
@@ -81,6 +86,7 @@ $budgetRecords = $stmt->fetchAll();
                 <th>Amount</th>
                 <th>Entry Date</th>
                 <th>Description</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -92,10 +98,14 @@ $budgetRecords = $stmt->fetchAll();
                     <td>$<?php echo number_format($record['amount'], 2); ?></td>
                     <td><?php echo htmlspecialchars($record['entry_date']); ?></td>
                     <td><?php echo htmlspecialchars($record['description']); ?></td>
+                    <td>
+                      <a href="edit_expense.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="delete_expense.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               <?php else: ?>
-                <tr><td colspan="5" class="text-center">No expense records found.</td></tr>
+                <tr><td colspan="6" class="text-center">No expense records found.</td></tr>
               <?php endif; ?>
             </tbody>
           </table>
@@ -113,6 +123,7 @@ $budgetRecords = $stmt->fetchAll();
                 <th>Running Balance</th>
                 <th>Start Date</th>
                 <th>End Date</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -125,10 +136,14 @@ $budgetRecords = $stmt->fetchAll();
                     <td>$<?php echo number_format($record['running_balance'], 2); ?></td>
                     <td><?php echo htmlspecialchars($record['start_date']); ?></td>
                     <td><?php echo htmlspecialchars($record['end_date']); ?></td>
+                    <td>
+                      <a href="edit_budget.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-primary">Edit</a>
+                      <a href="delete_budget.php?id=<?php echo $record['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               <?php else: ?>
-                <tr><td colspan="6" class="text-center">No budget records found.</td></tr>
+                <tr><td colspan="7" class="text-center">No budget records found.</td></tr>
               <?php endif; ?>
             </tbody>
           </table>
